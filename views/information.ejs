@@ -1,0 +1,57 @@
+<%- include('templates/bootstrap')%>
+<body>
+    <div class="container">
+    <center>
+        <img id="img" src="/estatico/img/Picture Security.png" alt="Logo_Empresa">
+    <div id="large-space"></div>  
+    <table class="table table-hover">
+        <thead>
+          <tr style="background-color:  rgb(25, 157, 190)">
+            <th id="td_white_titles" style="text-align: center" colspan="2" scope="col">Información</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%
+          var id=1;
+          user.forEach((user)=>{
+          %>
+          <tr style="background-color: white">
+            <th id="td_black_titles" scope="row">Nombre:</th>
+            <td id="td_black_text"><%= user.name %></td>
+          </tr>
+          <tr style="background-color: rgb(25, 157, 190)">
+            <th id="td_white_titles" scope="row">Dirección: </th>
+            <td id="td_white_text"><%= user.address %></td>
+          </tr>
+          <tr style="background-color: white;">
+            <th id="td_black_titles" scope="row">Correo: </th>
+            <td id="td_black_text"><%= user.email %></td>
+          </tr>
+          <tr style="background-color: rgb(25, 157, 190);">
+            <th id="td_white_titles" scope="row">Teléfono: </th>
+            <td id="td_white_text"><%= user.number %></td>
+          </tr>
+          <tr style="background-color: white;">
+            <th id="td_black_titles" scope="row">Contraseña: </th>
+            <td id="td_black_text"><%= user.password %></td>
+          </tr>
+          <tr style="background-color: rgb(25, 157, 190);">
+            <th id="td_white_titles" scope="row">Cámara 1: </th>
+            <td id="td_white_text"><%= user.camara1 %></td>
+          </tr>
+          <tr style="background-color: white;">
+            <th id="td_black_titles" scope="row">Cámara 2: </th>
+            <td id="td_black_text"><%= user.camara2 %></td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <a type="button" class="btn btn-primary col-12 mb-3" href="/newInformation/<%= user._id %>"><p>👨‍🔧 Modificar Información</p></a>
+    <a type="button" class="btn btn-danger col-12 mb-3" href="/deleteUser/<%= user._id %>"><p>❌ Eliminar cuenta</p></a>
+    <a type="button" class="btn btn-secondary col-12 mb-3" href="/opcions"><p>⬅ Atrás</p></a>
+    <%
+      });
+    %>
+</div>
+</body>
+</html>

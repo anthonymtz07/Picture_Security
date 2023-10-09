@@ -1,0 +1,42 @@
+<%- include('templates/bootstrap')%>
+<body>
+    <center>
+        <img id="img" src="/estatico/img/User.png" alt="Imagen_Usuario">
+    </center>
+    <div id="large-space"></div>
+    <h2>Modifica tu Información aquí</h2>
+    <div id="medium-space"></div>
+    <!--Formulario-->
+        <form action="/change" method="POST">
+            <input type="hidden" name="id" id="id" readonly value="<%= user.id%>">
+            <p>Nombre(s)</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="name" id="input" value="<%= user.name%>">
+            <p>Domicilio</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="address" id="input" value="<%= user.address%>">
+            <p>Correo</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="email" name="email" id="input" value="<%= user.email%>">
+            <p>Teléfono</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="number" id="input" value="<%= user.number%>">
+            <p>Contraseña</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="password" id="input" value="<%= user.password%>">
+            <p>IP Camara 1</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="camara1" id="input" value="<%= user.camara1%>">
+            <p>IP Camara 2</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="camara2" id="input" value="<%= user.camara2%>">
+            <p>Tipo</p>
+            <div id="small-space"></div>
+            <input class="form-control mb-2" type="text" name="tipo" id="input" value="<%= user.tipo%>">
+            <div id="medium-space"></div>
+            <button class="btn btn-primary col-12 mb-3 form-control" type="submit"><p>📁 Guardar</p></button>
+            <a class="btn btn-outline-secondary col-12" href="/informationAdmin"><p>❌ Cancelar</p></a>
+        </form>
+</body>
+<div id="large-space"></div>
+</html>

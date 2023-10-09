@@ -1,0 +1,33 @@
+<%- include('templates/bootstrap')%>
+<body>
+    <div class="container">
+        <center>
+            <img id="img" src="/estatico/img/Picture Security.png" alt="Logo_Empresa"
+        </center>
+        <div id="large-space"></div>    
+        <table class="table">
+            <thead>
+                <h2>Elige tu opción</h2>
+                <div id="medium-space"></div>
+            </thead>
+            <tbody>
+                <!--Informacion de usuario-->
+                <%
+                    var id=1;
+                    user.forEach((user)=>{
+                %>
+                <a type="button" class="btn btn-primary col-12 mb-3" href="<%= user.camara1 %>"><p>📷 Cámara 1</p></a>
+                <a type="button" class="btn btn-primary col-12 mb-3" href="<%= user.camara2 %>"><p>📷 Cámara 2</p></a>
+                <a type="button" class="btn btn-danger col-12 mb-3" href="tel:066"><p>📞 Llamada de emergencia</p></a>
+                <a type="button" class="btn btn-primary col-12 mb-3" href="/callcenter"><p>☎ Contáctanos</p></a>
+                <a type="button" class="btn btn-primary col-12 mb-3" href="/information"><p>👨‍🔧 Configuraciones</p></a>
+                <a type="button" class="btn btn-primary col-12 mb-3" href="/history"><p>👨‍💻 Acerca de</p></a>
+                <a type="button" class="btn btn-outline-danger col-12" href="/logout"><p>🔐 Cerrar Sesión</p></a>
+                <%
+                    })
+                %>
+            </tbody>
+        </table>
+    </div>    
+</body>
+</html>

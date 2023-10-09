@@ -1,0 +1,52 @@
+<%- include('templates/bootstrap')%>
+<body>
+    <div class="container">
+        <center>
+            <img id="img" src="/estatico/img/Picture Security.png" alt="Logo_Empresa">
+            <div id="medium-space"></div>
+            <form action="/buscarAdmin" method="POST">
+                <p>Ingresa el correo del administrador:</p>
+                <div id="small-space"></div>
+                <input class="form-control mb-2 col-5" type="text" name="buscar" id="input">
+                <button class="btn btn-primary col-4 mb-3 form-control" type="submit"><p>Buscar</p></button>
+            </form>
+            <table class="table">
+                <thead>
+                    <tr style="background-color: cadetblue">
+                        <th id="td_white_titles" style="text-align: center" colspan="2" scope="col">Administradores Activos 🟢</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        var id=0;
+                        user.forEach((user)=>{
+                    %>
+
+                        <tr style="background-color: white;">
+                            <th id="td_black_titles">Id:</th>
+                            <th id="td_black_text"><%= id+=1 %></th>
+                        </tr>
+                        <tr style="background-color: white;">
+                            <th id="td_black_titles">Nombre:</th>
+                            <th id="td_black_text"><%= user.name %></th>
+                        </tr>
+                        <tr style="background-color: white;">
+                            <th id="td_black_titles">Correo:</th>
+                            <th id="td_black_text"><%= user.email %></th>
+                        </tr>
+                        <tr style="background-color: rgb(187, 230, 217);">
+                            <th id="td_white_text" colspan="2" scope="col" style="text-align: center;">
+                                <a type="button" class="btn btn-primary col-6" href="/newInformationAdmin/<%= user._id %>"><p>👨‍🔧 Modificar</p></a>
+                                <a type="button" class="btn btn-danger col-5" href="/deleteAdmin/<%= user._id %>"><p>❌ Eliminar</p></a>                        
+                            </th>
+                        </tr>
+                    <%
+                        });
+                    %>
+                </tbody>
+            </table>
+            <a type="button" class="btn btn-primary col-12 mb-3" href="/newAdmin"><p>👨‍💼 Nuevo Administrador</p></a>
+            <a type="button" class="btn btn-secondary col-12" href="/admin"><p>⬅ Atrás</p></a>
+        </center>
+    </div>
+</body>
